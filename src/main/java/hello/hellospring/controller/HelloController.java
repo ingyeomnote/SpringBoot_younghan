@@ -29,12 +29,12 @@ public class HelloController {
     @GetMapping("hello-api")
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
-        Hello hello = new Hello();
-        hello.setName(name);
-        return hello;
+        Hello hello = new Hello(); // hello 인스턴스 객체
+        hello.setName(name); // hello.name 변수에 @RequestParam("name") String name 값 저장
+        return hello; // hello 객체 리턴
     }
 
-    static class Hello{
+    static class Hello{ // static 키워드를 사용하면 클래스 안에 클래스 생성 가능
         private String name;
 
         public String getName() {
